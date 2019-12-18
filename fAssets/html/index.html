@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首页</title>
+  <link rel="stylesheet" href="../js/layui/css/layui.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- header部分 -->
+    <div id="header" class="flex header">
+      <div class="header_l"></div>
+      <div class="header_c flex1"></div>
+      <div class="header_r"></div>
+    </div>
+    <div class="content flex">
+      <!-- 左侧菜单部分 -->
+      <div class="leftMenu">
+        <div class="menu_t"></div>
+        <div class="menu_c">
+          <ul>
+            <li class="active">
+              <a href="javascript: void(0);">首页</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">付息兑付行权</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">重大事项检测</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">持有人会议检测</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">投保条款检测</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">信用事件触发监测</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">评级调整监测</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">定期披露监测</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">重点关注池管理</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">存续期债项台账</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">存续期发行人查询</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">后续管理工作报告</a>
+            </li>
+            <li>
+              <a href="javascript: void(0);">自律处分</a>
+            </li>
+          </ul>
+          <div class="systemName">
+            <p>后续管理信息服务系统</p>
+            <i class="line"></i>
+            <em class="block"></em>
+          </div>
+        </div>
+      </div>
+      <!-- 右侧内容部分 -->
+      <div class="main flex1">
+        <div class="main_top flex">
+          <div class="main_top_left flex1">
+            <div class="innerTop">
+              <p class="datas">ABN: 9只、18.016331亿; CP: 39只、264.24亿; MTN: 373只、2853.68亿; PPN: 198只、1063.485亿; SCP:
+                107只、652.3亿; 债权融资计划: 12只、76.767196亿; 政府支持: 1只、41.6亿; 项目收益票据:2只、5亿; 总存规模: 426户、4975.08527亿</p>
+              <div class="dataInfo flex">
+                <div class="item item1">
+                  <p class="title">发行主体</p>
+                  <a class="number">426</a>
+                  <div class="detail">仅PPN 123</div>
+                </div>
+                <div class="item item2">
+                  <p class="title">债权期数</p>
+                  <a class="number">1,005</a>
+                  <div class="detail">ABN9 CP39 SCP107 MTN 373 <br> PPN 198 债融 12</div>
+                </div>
+                <div class="item item3">
+                  <p class="title">债权规模</p>
+                  <a class="number">4975.088527亿</a>
+                  <div class="detail">ABN 18.0163331亿 SCP 625.3亿 <br>CP 264.24亿 MTN 2853.68亿 <br>PPN 1063.485亿 债融
+                    76.767196亿</div>
+                </div>
+              </div>
+            </div>
+            <!-- 地图部分 -->
+            <div class="mapDataWrap">
+              <div class="tab clearfix">
+                <span>行业</span>
+                <span class="active">地区</span>
+              </div>
+              <div class="mapData flex">
+                <div class="riskLevel flex">
+                  <div class="item level1">
+                    <p>高风险</p>
+                    <span></span>
+                  </div>
+                  <div class="item level2">
+                    <p>中风险</p>
+                    <span></span>
+                  </div>
+                  <div class="item level3">
+                    <p>轻风险</p>
+                    <span></span>
+                  </div>
+                </div>
+                <div id="myMap"></div>
+                <div id="treemap"></div>
+                <div class="cxqksh">存续期可视化</div>
+                <div class="mapDataInfo">
+                  <div class="distanceTime">
+                    <i class="fl"></i>
+                    <span>2019.06.01 ~ 2019.07.01</span>
+                  </div>
+                  <div class="risk_profile">
+                    <p class="title">某省风险概览</p>
+                    <div class="circles flex">
+                      <div id="circle1" class="circle"></div>
+                      <div id="circle2" class="circle"></div>
+                      <div id="circle3" class="circle"></div>
+                      <div id="circle4" class="circle"></div>
+                    </div>
+                    <div class="descripts flex">
+                      <div class="descript">
+                        <p>重点关注</p>
+                        <p>池占比</p>
+                      </div>
+                      <div class="descript">
+                        <p>信用事件</p>
+                        <p>发生占比</p>
+                      </div>
+                      <div class="descript">
+                        <p>重大事件</p>
+                        <p>发生占比</p>
+                      </div>
+                      <div class="descript">
+                        <p>评价下调</p>
+                        <p>发生占比</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tags">
+                    <span class="item item1">联创光电</span>
+                    <span class="item item2">联泰环保</span>
+                    <span class="item item3">天准科技</span>
+                    <span class="item item4">飞乐音响</span>
+                    <span class="item item5">新城控股</span>
+                    <span class="item item6">天准科技</span>
+                    <span class="item item7">退市海润</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 右侧日历，信息部分 -->
+          <div class="main_top_right">
+            <div class="calendarWrap">
+              <p class="title">付息兑付行权</p>
+              <div class="calendar" id="calendar"></div>
+              <div class="change">
+                <p class="changeTip">点击下方修改时间：</p>
+                <p class="changeTime">*标识顺序:<span>计划付息(30天)/</span><span>计划兑付(60天)/</span><span>计划行权(30天)</span></p>
+              </div>
+            </div>
+            <div class="detailed">
+              <p class="title">明细</p>
+              <table class="table_detail" border="1" align="center">
+                <thead>
+                  <tr>
+                    <th width=40>序号</th>
+                    <th>债券简称</th>
+                    <th width=40>工作事项</th>
+                    <th width=50>日期</th>
+                    <th width=50>本金(万元)</th>
+                    <th width=50>利息(万元)</th>
+                    <th width=40>是否信息披露</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr align="center">
+                    <td>1</td>
+                    <td width=80 word-wrap:break-word>19XXXSCP001</td>
+                    <td>付息</td>
+                    <td>2019-06-22</td>
+                    <td>1222000</td>
+                    <td>128000</td>
+                    <td>是</td>
+                  </tr>
+                  <tr align="center">
+                    <td>1</td>
+                    <td width=80 word-wrap:break-word>19XXXSCP001</td>
+                    <td>付息</td>
+                    <td>2019-06-22</td>
+                    <td>1222000</td>
+                    <td>128000</td>
+                    <td>是</td>
+                  </tr>
+                  <tr align="center">
+                    <td>1</td>
+                    <td width=80 word-wrap:break-word>19XXXSCP001</td>
+                    <td>付息</td>
+                    <td>2019-06-22</td>
+                    <td>1222000</td>
+                    <td>128000</td>
+                    <td>是</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="main_bottom flex">
+          <div class="rotateCircle">
+            <div class="circle-box">
+              <span class="dot_f dot_1">重大事项</span>
+              <span class="dot_f dot_2">投保条款</span>
+              <span class="dot_f dot_3">持有人会议</span>
+              <span class="dot_f dot_4">信用事件</span>
+              <span class="dot_f dot_5">评级调整</span>
+            </div>
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3">
+              <span class="dot dot1">重大事项</span>
+              <span class="dot dot2">投保条款</span>
+              <span class="dot dot3">评级调整</span>
+            </div>
+            <div class="circle circle4">
+              <span class="dot dot4">信用事件</span>
+            </div>
+            <div class="circle circle5">
+              <span class="dot dot5">持有人会议</span>
+            </div>
+          </div>
+          <div class="risk-warp">
+            <div class="riskList" style="display: block">
+              <div class="flex top">
+                <span class="risk-tit-bg"></span>
+                <div class="title flex1">
+                  <h2>重大事项触发监测</h2>
+                </div>
+                <a href="" class="more">更多</a>
+              </div>
+              <ul>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">大唐发电子公司连城发电无力偿还债务遭法院判决破产</a></h4>
+                    <p>江苏宏图高科技股份有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：港交所</em>
+                    </div>
+                  </div>
+                  <span class="btn">企业破产</span>
+                </li>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">金发科技：关于资产抵押事项的公告</a></h4>
+                    <p>上海申华控股股份有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：上交所</em>
+                    </div>
+                  </div>
+                  <span class="btn">资产抵质押</span>
+                </li>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">安徽省投资集团副总经理姚卫东接受审查调查</a></h4>
+                    <p>安徽省投资集团控股有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：安徽纪检监察网</em>
+                    </div>
+                  </div>
+                  <span class="btn">被调查/处罚</span>
+                </li>
+              </ul>
+              <div class="tips">备注：监测结果仅供参考，请与企业进行确认；事前事后以主承是否披露重大事项公告为时间区分点；事前默认仅展示债项持有期最长的发行人重大事项监测，事后包括全口径监测。监测内容均转自发行人市场公告及舆情新闻，北金所对监测内容的真实性、准确性和完整性不承担相关法律责任。</div>
+            </div>
+            <div class="riskList">
+              <div class="flex top">
+                <span class="risk-tit-bg"></span>
+                <div class="title flex1">
+                  <h2>投保条款触发监测</h2>
+                </div>
+                <a href="" class="more">更多</a>
+              </div>
+              <table class="table_detail" border="1" align="center">
+                <thead>
+                <tr>
+                  <th width=140>发行人</th>
+                  <th width=120>债项简称</th>
+                  <th width=120>投保条款类型</th>
+                  <th width=180>潜在触发事件</th>
+                  <th width=100>监测时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr align="center">
+                  <td>洛娃科技实业集团有限公司</td>
+                  <td>18洛娃科技MTN001</td>
+                  <td>交叉保护；事先约束</td>
+                  <td>16洛娃科技PPN001违约</td>
+                  <td>2018/12/6</td>
+                </tr>
+                <tr align="center">
+                  <td>洛娃科技实业集团有限公司</td>
+                  <td>18洛娃科技MTN001</td>
+                  <td>交叉保护；事先约束</td>
+                  <td>16洛娃科技PPN001违约</td>
+                  <td>2018/12/6</td>
+                </tr>
+                <tr align="center">
+                  <td>洛娃科技实业集团有限公司</td>
+                  <td>18洛娃科技MTN001</td>
+                  <td>交叉保护；事先约束</td>
+                  <td>16洛娃科技PPN001违约</td>
+                  <td>2018/12/6</td>
+                </tr>
+                </tbody>
+              </table>
+              <div class="tips">备注：监测结果仅供参考，请与企业进行确认；事前事后以主承是否披露重大事项公告为时间区分点；事前默认仅展示债项持有期最长的发行人重大事项监测，事后包括全口径监测。监测内容均转自发行人市场公告及舆情新闻，北金所对监测内容的真实性、准确性和完整性不承担相关法律责任。</div>
+            </div>
+            <div class="riskList">
+              <div class="flex top">
+                <span class="risk-tit-bg"></span>
+                <div class="title flex1">
+                  <h2>持有人会议</h2>
+                </div>
+                <a href="" class="more">更多</a>
+              </div>
+              <ul>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">大唐发电子公司连城发电无力偿还债务遭法院判决破产</a></h4>
+                    <p>江苏宏图高科技股份有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：港交所</em>
+                    </div>
+                  </div>
+                  <span class="btn">企业破产</span>
+                </li>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">金发科技：关于资产抵押事项的公告</a></h4>
+                    <p>上海申华控股股份有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：上交所</em>
+                    </div>
+                  </div>
+                  <span class="btn">资产抵质押</span>
+                </li>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">安徽省投资集团副总经理姚卫东接受审查调查</a></h4>
+                    <p>安徽省投资集团控股有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：安徽纪检监察网</em>
+                    </div>
+                  </div>
+                  <span class="btn">被调查/处罚</span>
+                </li>
+              </ul>
+              <div class="tips">备注：监测结果仅供参考，请与企业进行确认；事前事后以主承是否披露重大事项公告为时间区分点；事前默认仅展示债项持有期最长的发行人重大事项监测，事后包括全口径监测。监测内容均转自发行人市场公告及舆情新闻，北金所对监测内容的真实性、准确性和完整性不承担相关法律责任。</div>
+            </div>
+            <div class="riskList">
+              <div class="flex top">
+                <span class="risk-tit-bg"></span>
+                <div class="title flex1">
+                  <h2>信用事件检测</h2>
+                </div>
+                <a href="" class="more">更多</a>
+              </div>
+              <ul>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">大唐发电子公司连城发电无力偿还债务遭法院判决破产</a></h4>
+                    <p>江苏宏图高科技股份有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：港交所</em>
+                    </div>
+                  </div>
+                  <span class="btn">企业破产</span>
+                </li>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">金发科技：关于资产抵押事项的公告</a></h4>
+                    <p>上海申华控股股份有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：上交所</em>
+                    </div>
+                  </div>
+                  <span class="btn">资产抵质押</span>
+                </li>
+                <li class="flex">
+                  <div class="left flex1">
+                    <h4><a href="">安徽省投资集团副总经理姚卫东接受审查调查</a></h4>
+                    <p>安徽省投资集团控股有限公司</p>
+                    <div class="info">
+                      <span class="time">2019年6月27日</span>
+                      <em class="from">信息来源：安徽纪检监察网</em>
+                    </div>
+                  </div>
+                  <span class="btn">被调查/处罚</span>
+                </li>
+              </ul>
+              <div class="tips">备注：监测结果仅供参考，请与企业进行确认；事前事后以主承是否披露重大事项公告为时间区分点；事前默认仅展示债项持有期最长的发行人重大事项监测，事后包括全口径监测。监测内容均转自发行人市场公告及舆情新闻，北金所对监测内容的真实性、准确性和完整性不承担相关法律责任。</div>
+            </div>
+            <div class="riskList" >
+              <div class="flex top">
+                <span class="risk-tit-bg"></span>
+                <div class="title flex1">
+                  <h2>评级调整监测</h2>
+                </div>
+                <a href="" class="more">更多</a>
+              </div>
+              <div class="list-btm">
+                <table class="table_detail" border="1" align="center">
+                  <thead>
+                  <tr>
+                    <th width=90>评级对象</th>
+                    <th width=140>发行人</th>
+                    <th width=120>债项简称</th>
+                    <th width=80>最新评级</th>
+                    <th width=80>最新展望</th>
+                    <th width=80>评级变动</th>
+                    <th width=80>关联债券</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr align="center">
+                    <td>债项评级</td>
+                    <td>厦门翔业集团有限公司</td>
+                    <td>16厦翔业MTN001</td>
+                    <td>C</td>
+                    <td>负面</td>
+                    <td>下调</td>
+                    <td>XXSCP001</td>
+                  </tr>
+                  <tr align="center">
+                    <td>债项评级</td>
+                    <td>厦门翔业集团有限公司</td>
+                    <td>16厦翔业MTN001</td>
+                    <td>C</td>
+                    <td>负面</td>
+                    <td>下调</td>
+                    <td>XXSCP001</td>
+                  </tr>
+                  <tr align="center">
+                    <td>债项评级</td>
+                    <td>厦门翔业集团有限公司</td>
+                    <td>16厦翔业MTN001</td>
+                    <td>C</td>
+                    <td>负面</td>
+                    <td>下调</td>
+                    <td>XXSCP001</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tips">备注：监测结果仅供参考，请与企业进行确认；事前事后以主承是否披露重大事项公告为时间区分点；事前默认仅展示债项持有期最长的发行人重大事项监测，事后包括全口径监测。监测内容均转自发行人市场公告及舆情新闻，北金所对监测内容的真实性、准确性和完整性不承担相关法律责任。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery-1.8.3.min.js"></script>
+  <script src="../js/echarts.min.js"></script>
+  <script src="../js/layui/layui.js"></script>
+  <script src="../js/progress.js"></script>
+  <script src="../js/china.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/calendar.js"></script>
+  <script src="../js/drawCircle.js"></script>
+</body>
+
+</html>

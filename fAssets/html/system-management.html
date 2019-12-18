@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>池子管理(关注类项目统计分布)</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <!-- <link rel="stylesheet" href="../css/distribution.css"> -->
+    <link rel="stylesheet" href="../css/system-management.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- header部分 -->
+        <div id="header" class="flex header">
+            <div class="header_l"></div>
+            <div class="header_c flex1 distri-header">
+               
+                <h2 class="title grey">用户管理</h2>
+                <h2 class="title">访问统计</h2>
+               
+            </div>
+            <div class="header_r"></div>
+        </div>
+        <div class="content flex">
+            <!-- 左侧菜单部分 -->
+            <div class="leftMenu">
+                <div class="menu_t"></div>
+                <div class="menu_c">
+                    <ul>
+                        <li class="active">
+                            <a href="javascript: void(0);">首页</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">付息兑付行权</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重大事项检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">持有人会议检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">投保条款检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">信用事件触发监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">评级调整监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">定期披露监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重点关注池管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期债项台账</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期发行人查询</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">后续管理工作报告</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">自律处分</a>
+                        </li>
+                    </ul>
+                    <div class="systemName">
+                        <p>后续管理信息服务系统</p>
+                        <i class="line"></i>
+                        <em class="block"></em>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧内容部分 -->
+            <div class="main flex1 p-r-15">
+                <div class="search-wrap">
+                    <div class="search-box flex">
+                        <div class="search-form flex">
+                            <div class="search_type">机构名称 |</div>
+                            <input type="text">
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">访问的模块</label>
+                            <div class="layui-input-block">
+                              <select name="city" lay-verify="required" >
+                                <option value="">全部</option>
+                              
+                              </select>
+                            </div>
+                        
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">内部用户</label>
+                        <div class="layui-input-block">
+                          <select name="city" lay-verify="required" >
+                            <option value="">全部</option>
+                          
+                          </select>
+                        </div>
+                    
+                </div>
+                    <div class="search-btn">查询 <span>●</span></div>
+                </div>
+                <div class="distri-main">
+                    <table class="layui-table">
+                        <colgroup>
+                          <col width="150">
+                          <col width="200">
+                          <col>
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>序号</th>
+                            <th>功能模块</th>
+                            <th>访问页面</th>
+                            <th>访问次数</th>
+                            <th>访问时间汇总(时)</th>
+                            <th>详情</th>
+                            <th>操作</th>
+                          </tr> 
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>2</td>
+                            <td>首页</td>
+                            <td>首页</td>
+                            <td>500</td>
+                            <td>20</td>
+                            <td>入池推荐</td>
+                            <td><a href="javascript:;" onclick="authorization()">授权</a></td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>首页</td>
+                            <td>首页</td>
+                            <td>500</td>
+                            <td>20</td>
+                            <td>入池推荐</td>
+                            <td> <a href="javascript:;" onclick="authorization()">授权</a> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/layui/layui.js"></script>
+    <!-- <script src="../js/debt-account-list.js"></script> -->
+    <script>
+        layui.use('table', function () {
+            var table = layui.table;
+
+            //存续期间企业入池原因分布情况
+            table.render({
+                elem: '#table1'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '序号', width: 200 }
+                    , { field: 'city', title: '笔数', width: 300 }
+                    , { field: 'sign', title: '金额', width: 300, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 300, edit: 'text' }
+
+                ]]
+            });
+          
+          
+        });
+      
+     function authorization(){
+           //弹出框
+      layui.use('layer', function(){
+          var layer = layui.layer;
+          layer.open({
+              type: 2,
+              title: ['菜单授权', 'font-size:18px;'],
+              shadeClose:true,
+              area: ['900px', '700px'],
+              fixed: false, //不固定
+              maxmin: true,
+              
+              content: 'add-authorization.html'
+          });
+      });
+     }
+     
+    </script>
+</body>
+
+</html>

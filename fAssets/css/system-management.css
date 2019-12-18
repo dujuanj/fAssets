@@ -1,0 +1,27 @@
+.grey {
+    color: #797979;
+    font-weight: normal!important;
+}
+.layui-form-item{
+    color:#fff;
+    width:265px;
+    margin:5px 0 0 0;
+}
+.layui-form-label{
+    width:110px;
+}
+.layui-form-item select{
+    height: 30px;
+    width:150px;
+    margin-top:3px;
+}
+.search-wrap .search-box{
+    width:820px;
+}
+.distri-main{
+    margin-top:25px;
+    background: #fff;
+    padding:15px;
+    box-sizing: border-box;
+}
+

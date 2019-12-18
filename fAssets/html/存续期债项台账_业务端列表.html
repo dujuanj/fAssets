@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>存续期债项台账__业务端</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <style>
+        .tree-left {
+            width: 21%;
+            border: 1px solid rgba(176, 255, 255, 1);
+            padding-bottom:10px;
+            float: left;
+        }
+        .tree-right{
+            width:79%;
+            border: 1px solid rgba(176, 255, 255, 1);
+            float: left;
+        }
+        .target {
+            height: 24px;
+            font-weight: 700;
+            font-style: normal;
+            color: #B0FFFF;
+            text-align: center;
+            font-size:18px;
+            border-bottom: 1px solid rgba(176, 255, 255, 1)
+        }
+        .layui-table-body{
+    overflow-x:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- header部分 -->
+        <div id="header" class="flex header">
+            <div class="header_l"></div>
+            <div class="header_c flex1">
+                <a class="title">存续期债项台账</a>
+                <a class="title gray">存续统计信息</a>
+            </div>
+            <div class="header_r"></div>
+        </div>
+        <div class="content flex">
+            <!-- 左侧菜单部分 -->
+            <div class="leftMenu">
+                <div class="menu_t"></div>
+                <div class="menu_c">
+                    <ul>
+                        <li class="active">
+                            <a href="javascript: void(0);">首页</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">付息兑付行权</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重大事项检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">持有人会议检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">投保条款检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">信用事件触发监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">评级调整监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">定期披露监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重点关注池管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期债项台账</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期发行人查询</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">后续管理工作报告</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">自律处分</a>
+                        </li>
+                    </ul>
+                    <div class="systemName">
+                        <p>后续管理信息服务系统</p>
+                        <i class="line"></i>
+                        <em class="block"></em>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧内容部分 -->
+            <div class="main flex1 p-r-15">
+                <div class="search-wrap">
+                    <div class="search-box w02 flex">
+                        <div class="search-form flex">
+                            <div class="search_type">产品名称 |</div>
+                            <input type="text">
+                        </div>
+                        <div class="search-form flex">
+                            <div class="search_type">融资人人名称 |</div>
+                            <input type="text">
+                        </div>
+                        <div class="search-form flex">
+                            <div class="search_type">备案通知书文号 |</div>
+                            <input type="text" style="width: 88px">
+                        </div>
+                        <div class="search-btn">查询 <span>●</span></div>
+                    </div>
+                </div>
+                <div class="select-warp">
+                    <div class="select-box flex">
+                        <div class="sl-key">利率分布：</div>
+                        <ul class="sl-value flex1">
+                            <li><a class="active">全部</a></li>
+                            <li><a>SCP</a></li>
+                            <li><a>CP</a></li>
+                            <li><a>MTN</a></li>
+                            <li><a>PPN</a></li>
+                            <li><a>ABN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>债权融资计划</a></li>
+                            <li><a>其他</a></li>
+                        </ul>
+                    </div>
+                    <div class="select-box flex">
+                        <div class="sl-key">期限分布：</div>
+                        <ul class="sl-value flex1">
+                            <li><a class="active">全部</a></li>
+                            <li><a>SCP</a></li>
+                            <li><a>CP</a></li>
+                            <li><a>MTN</a></li>
+                            <li><a>PPN</a></li>
+                            <li><a>ABN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>债权融资计划</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>其他</a></li>
+                        </ul>
+                    </div>
+                    <div class="select-box flex">
+                        <div class="sl-key">增信情况：</div>
+                        <ul class="sl-value flex1">
+                            <li><a class="active">全部</a></li>
+                            <li><a>SCP</a></li>
+                            <li><a>CP</a></li>
+                            <li><a>MTN</a></li>
+                            <li><a>PPN</a></li>
+                            <li><a>ABN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>SMECN</a></li>
+                            <li><a>债权融资计划</a></li>
+                            <li><a>其他</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dataWrap">
+                    <div class="search_table flex">
+                        <div class="search_l flex">
+                            <span>地区：</span>
+                            <select name="" id="">
+                                <option value="">北京</option>
+                                <option value="">上海</option>
+                                <option value="">深圳</option>
+                                <option value="">杭州</option>
+                            </select>
+                            <span>主承销商：</span>
+                            <select name="" id="">
+                                <option value="">工商银行</option>
+                                <option value="">农业银行</option>
+                                <option value="">中国银行</option>
+                                <option value="">招商银行</option>
+                            </select>
+                        </div>
+                        <div class="search_c"></div>
+                        <div class="search_r flex1 flex">
+                            <div class="screening">筛选日期类型</div>
+
+                            <div class="layui-form">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">日期范围</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" class="layui-input" id="test6" placeholder=" - ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="controls import">
+                                <span>导入</span>
+                            </div>
+                            <div class="controls downLoad">
+                                <span>下载</span>
+                            </div>
+                            <div class="controls wh">
+                                <span>台账维护</span>
+                            </div>
+                        </div>
+                        <div class="dataType flex">
+                            <input type="checkbox" id="all">
+                            <label for="all">全部</label>
+
+                            <input type="checkbox" id="interestData">
+                            <label for="interestData">起息日期</label>
+
+                            <input type="checkbox" id="endData">
+                            <label for="endData">到期日期</label>
+                        </div>
+                    </div>
+                    <div class="tree-left">
+                        <div class="target">待选指标</div>
+                        <div id="test1"></div>
+                    </div>
+                    <div class="tree-right">
+                        <div class="container-fluid">
+                           
+                            <div class="w-100 mb-2 d-inline d-sm-none"></div>
+                          
+                            <div class="row">
+                                <div class="col-12">
+                                    
+                                    <table id="table1" lay-filter="test" style='width:900px;overflow-x: scroll;'></table>
+                                </div>
+                            </div>
+                        </div>
+                 
+                       
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/layui/layui.js"></script>
+    <script src="../js/debt-accountYw-list.js"></script>
+</body>
+
+</html>

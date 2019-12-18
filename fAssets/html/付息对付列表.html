@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>付息兑付行权</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/layui/layui.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <!-- header部分 -->
+    <div id="header" class="flex header">
+        <div class="header_l"></div>
+        <div class="header_c flex1">
+            <a class="active fx-title">计划付息</a>
+            <a class="fx-title ">计划兑付</a>
+            <a class="fx-title">计划行权</a>
+        </div>
+        <div class="header_r"></div>
+    </div>
+    <div class="content flex">
+        <!-- 左侧菜单部分 -->
+        <div class="leftMenu">
+            <div class="menu_t"></div>
+            <div class="menu_c">
+                <ul>
+                    <li class="active">
+                        <a href="javascript: void(0);">首页</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">付息兑付行权</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">重大事项检测</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">持有人会议检测</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">投保条款检测</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">信用事件触发监测</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">评级调整监测</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">定期披露监测</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">重点关注池管理</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">存续期债项台账</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">存续期发行人查询</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">后续管理工作报告</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);">自律处分</a>
+                    </li>
+                </ul>
+                <div class="systemName">
+                    <p>后续管理信息服务系统</p>
+                    <i class="line"></i>
+                    <em class="block"></em>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧内容部分 -->
+        <div class="main flex1 p-r-15">
+            <div class="search-wrap flex">
+                <div class="search-box w02 flex">
+                    <div class="search-form flex">
+                        <div class="search_type">债券简称 |</div>
+                        <input type="text">
+                    </div>
+                    <div class="search-form flex">
+                        <div class="search_type">发行人名称 |</div>
+                        <input type="text">
+                    </div>
+                    <div class="search-form flex">
+                        <div class="search_type">剩余期限 |</div>
+                        <input type="text">
+                    </div>
+                    <div class="search-btn">查询 <span>●</span></div>
+                </div>
+                <div class="search-box w01 flex m-l-10">
+                    <div class="search-form date-box flex">
+                        <a><img src="../images/date.png"></a>
+                        <input type="text" class="date" id="test6" placeholder=" - ">
+                    </div>
+                    <div class="search-btn">查询 <span>●</span></div>
+                </div>
+            </div>
+            <div class="con-warp m-t-10">
+                <span class="word01">重点关注池:</span>
+                <select name="" id="">
+                    <option value="">石油</option>
+                    <option value="">钢铁</option>
+                    <option value="">深圳</option>
+                    <option value="">杭州</option>
+                </select>
+                <span class="bg02 info">详情</span>
+            </div>
+            <div class="dataWrap">
+                <div class="search_table flex">
+                    <div class="search_l flex">
+                        <span>地区：</span>
+                        <select name="" id="">
+                            <option value="">北京</option>
+                            <option value="">上海</option>
+                            <option value="">深圳</option>
+                            <option value="">杭州</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">济南</option>
+                            <option value="">郑州</option>
+                        </select>
+                        <span>披露进度：</span>
+                        <select name="" id="">
+                            <option value="">已披露</option>
+                            <option value="">未处理</option>
+                            <option value="">未关注</option>
+                        </select>
+                        <span><input type="radio" value="">只看债务融资工具</span>
+                        <span class="m-l-5"><input type="radio" value="">只看债权融资工具</span>
+                    </div>
+                    <div class="search_c">
+
+                    </div>
+                    <div class="search_r flex1 flex">
+                        <div class="controls import">
+                            <span>上传</span>
+                        </div>
+                        <div class="controls downLoad">
+                            <span>下载</span>
+                        </div>
+                        <div class="controls wh">
+                            <span>台账维护</span>
+                        </div>
+                    </div>
+                    <div class="dataType flex">
+                        <input type="checkbox" id="all">
+                        <label for="all">全部</label>
+
+                        <input type="checkbox" id="startData">
+                        <label for="startData">发行日期</label>
+
+                        <input type="checkbox" id="interestData">
+                        <label for="interestData">起息日期</label>
+
+                        <input type="checkbox" id="honourData">
+                        <label for="honourData">兑付日起</label>
+
+                        <input type="checkbox" id="nextPayData">
+                        <label for="nextPayData">下一付息日</label>
+
+                        <input type="checkbox" id="nextExerciseData">
+                        <label for="nextExerciseData">下一行权日</label>
+                    </div>
+                </div>
+                <table id="table1" lay-filter="table1"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/fxdf-list.js"></script>
+<script>
+</script>
+</body>
+
+</html>

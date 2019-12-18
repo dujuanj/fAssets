@@ -1,0 +1,71 @@
+.back{
+    display: inline-block;
+    color: #B0FFFF;
+    font-size:14px;
+    margin-right: 20px;
+}
+.back i{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/back.png') center center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+.grey{
+    color:#797979;
+    font-weight: normal!important;
+}
+.distri-header a{
+    display: inline-block;
+    width:74px;
+    height: 29px;
+    line-height: 29px;
+    background: url('../images/detail.png') center center no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    left:-35px;
+}
+.distri-header select{
+    height: 29px;
+    width:100px;
+}
+.distri-main{
+    margin:20px;
+    background: #fff;
+}
+.distri-main h1{
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+.layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even){
+    background: #E4E4E4;
+    color:#333
+}
+.prt1-title{
+    width:100%;
+    text-align: center;
+    font-size:18px;
+    background:#E4E4E4;
+    border:1px solid #797979;
+    padding:5px 0;
+    margin-top:10px;
+}
+.layui-table, .layui-table-view{
+    margin-top:0
+}
+.layui-table-cell{
+    text-align: center;
+}
+.mr10{
+    margin-right: 10px;
+}
+.dbtables{
+    display: flex;
+    width:100%;
+}
+.dbtables .tableft,.dbtables .tabright{
+    width: 50%;
+}

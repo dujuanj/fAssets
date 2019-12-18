@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>池子管理(关注类项目统计分布)</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/distribution.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- header部分 -->
+        <div id="header" class="flex header">
+            <div class="header_l"></div>
+            <div class="header_c flex1 distri-header">
+                <h2 class="back"> <i></i> 返回</h2>
+                <h2 class="title grey">重点关注池管理</h2>
+                <h2 class="title">关注类项目统计分布</h2>
+                <select name="" id="">
+                    <option value="">石油</option>
+                </select>
+                <a href="javascript:;">详情</a>
+            </div>
+            <div class="header_r"></div>
+        </div>
+        <div class="content flex">
+            <!-- 左侧菜单部分 -->
+            <div class="leftMenu">
+                <div class="menu_t"></div>
+                <div class="menu_c">
+                    <ul>
+                        <li class="active">
+                            <a href="javascript: void(0);">首页</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">付息兑付行权</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重大事项检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">持有人会议检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">投保条款检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">信用事件触发监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">评级调整监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">定期披露监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重点关注池管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期债项台账</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期发行人查询</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">后续管理工作报告</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">自律处分</a>
+                        </li>
+                    </ul>
+                    <div class="systemName">
+                        <p>后续管理信息服务系统</p>
+                        <i class="line"></i>
+                        <em class="block"></em>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧内容部分 -->
+            <div class="main flex1 p-r-15">
+                <div class="distri-main">
+                    <h1>关注类项目统计分布</h1>
+                    <div class="part1">
+                        <div class="prt1-title">存续期间企业入池原因分布情况</div>
+                        <table id="table1" lay-filter="test"></table>
+
+                    </div>
+                    <div class="part2">
+                        <div class="prt1-title">入池企业产品期限分布情况</div>
+                        <table id="table2" lay-filter="test"></table>
+
+                    </div>
+                    <div class="part3">
+                        <div class="prt1-title">主承分布情况</div>
+                        <table id="table3" lay-filter="test"></table>
+
+                    </div>
+                    <div class="part4">
+                        <div class="prt1-title">入池企业地域分布情况</div>
+                        <div  class="dbtables">
+                            <div class="mr10 tableft"> <table id="table41" lay-filter="test"></table></div>
+                            <div class="tabright"><table id="table42" lay-filter="test"></table></div>
+                        </div>
+                    </div>
+                    <div class="part5">
+                        <div  class="dbtables">
+                            <div class="mr10 tableft">
+                                <div class="prt1-title">入池企业行业分布情况</div> 
+                                <table id="table5" lay-filter="test"></table>
+                            </div>
+                            <div class="tabright">
+                                <div>
+                                    <div class="prt1-title">入池企业性质分布情况</div> 
+                                    <table id="table51" lay-filter="test"></table>
+                                </div>
+                                <div>
+                                    <div class="prt1-title">入池企业规模分布情况</div> 
+                                    <table id="table52" lay-filter="test"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 入池企业兑付期集中度情况(T,为统计当年） -->
+                    <div class="part6">
+                        <div class="prt1-title">入池企业兑付期集中度情况(T,为统计当年）</div>
+                        <div  class="dbtables">
+                            <div class="mr10 tableft"> <table id="table61" lay-filter="test"></table></div>
+                            <div class="tabright"><table id="table62" lay-filter="test"></table></div>
+                        </div>
+                    </div>
+                    <div class="part7">
+                        <div  class="dbtables">
+                            <div class="mr10 tableft">
+                                 <div class="prt1-title">入池企业持有人结构分布情况</div>
+                                 <table id="table71" lay-filter="test"></table>
+                                </div>
+                            <div class="tabright">
+                                <div class="prt1-title">票面利率分布情况</div>
+                                <table id="table72" lay-filter="test"></table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/layui/layui.js"></script>
+    <!-- <script src="../js/debt-account-list.js"></script> -->
+    <script>
+        layui.use('table', function () {
+            var table = layui.table;
+
+            //存续期间企业入池原因分布情况
+            table.render({
+                elem: '#table1'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '序号', width: 200 }
+                    , { field: 'city', title: '笔数', width: 300 }
+                    , { field: 'sign', title: '金额', width: 300, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 300, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业产品期限分布情况
+            table.render({
+                elem: '#table2'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: ' ', width: 200 }
+                    , { field: 'city', title: '笔数', width: 300 }
+                    , { field: 'sign', title: '金额', width: 300, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 300, edit: 'text' }
+
+                ]]
+            });
+            // 主承分布情况
+            table.render({
+                elem: '#table3'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '主承名称 ', width: 200 }
+                    , { field: 'city', title: '入池企业数', width: 200 }
+                    , { field: 'sign', title: '笔数', width: 200, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 200, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 200, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业地域分布情况
+            table.render({
+                elem: '#table41'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '省份名称' , width: 100 }
+                    , { field: 'city', title: '入池企业数' , width: 100 }
+                    , { field: 'sign', title: '笔数', edit: 'text', width: 100  }
+                    , { field: 'experience', title: '金额',  edit: 'text', width: 100  }
+                    , { field: 'experience', title: '金额占比',  edit: 'text' , width: 100 }
+
+                ]]
+            });
+            table.render({
+                elem: '#table42'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '占比最高省份中排名前5城市以下填城市名称', width: 150 }
+                    , { field: 'city', title: '入池企业数', width: 100 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业行业分布情况
+            table.render({
+                elem: '#table5'
+                , height: 500
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '行业名称', width: 150 }
+                    , { field: 'city', title: '入池企业数', width: 100 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业性质分布情况
+            table.render({
+                elem: '#table51'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '以下为需求例可按央行经济成分规则统计', width: 180 }
+                    , { field: 'city', title: '入池企业数', width: 100 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业规模分布情况
+            table.render({
+                elem: '#table52'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [{ field: 'sex', title: '以下为需求例可按央行经济成分规则统计', width: 180 }
+                    , { field: 'city', title: '入池企业数', width: 100 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业兑付期集中度情况(T,为统计当年）
+            table.render({
+                elem: '#table61'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [    { field: 'city', title: ' ', width: 250 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            table.render({
+                elem: '#table62'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [    { field: 'city', title: '占比最高年份中月度分布前3', width: 250 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            // 入池企业持有人结构分布情况
+            table.render({
+                elem: '#table71'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [    { field: 'city', title: '以下为需求例可按央行持有人所属国民经济部门规则统计', width: 250 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+            // 票面利率分布情况
+            table.render({
+                elem: '#table72'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                [    { field: 'city', title: ' ', width: 250 }
+                    , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                    , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                ]]
+            });
+        });
+    </script>
+</body>
+
+</html>
