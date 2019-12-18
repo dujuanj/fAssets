@@ -5,12 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>用户管理</title>
+    <title>访问统计</title>
     <link rel="stylesheet" href="../js/layui/css/layui.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/list.css">
     <!-- <link rel="stylesheet" href="../css/distribution.css"> -->
-    <link rel="stylesheet" href="../css/system-management.css">
+    <!-- <link rel="stylesheet" href="../css/system-management.css"> -->
+    <style>
+    .search-wrap .search-box.w02{
+        width:826px;
+    }
+    .layui-form-item{
+    color:#fff;
+    width:265px;
+    margin:5px 0 0 0;
+}
+.layui-form-label{
+    width:110px;
+}
+.layui-form-item select{
+    height: 30px;
+    width:150px;
+    margin-top:3px;
+}
+.search-wrap .search-box{
+    width:820px;
+}
+.distri-main{
+    margin-top:25px;
+    background: #fff;
+    padding:15px;
+    box-sizing: border-box;
+}
+    </style>
 </head>
 
 <body>
@@ -79,8 +106,8 @@
             </div>
             <!-- 右侧内容部分 -->
             <div class="main flex1 p-r-15">
-                <div class="search-wrap">
-                    <div class="search-box flex">
+                <div class="search-wrap flex">
+                    <div class="search-box w02 flex">
                         <div class="search-form flex">
                             <div class="search_type">机构名称 |</div>
                             <input type="text">
@@ -88,36 +115,35 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">访问的模块</label>
                             <div class="layui-input-block">
-                              <select name="city" lay-verify="required" >
+                              <select name="city" lay-verify="required">
                                 <option value="">全部</option>
-
+                               
                               </select>
                             </div>
-
+                          </div>
+                          <div class="layui-form-item">
+                            <label class="layui-form-label">内部用户</label>
+                            <div class="layui-input-block">
+                              <select name="city" lay-verify="required">
+                                <option value="">全部</option>
+                               
+                              </select>
+                            </div>
+                          </div>
+                        <div class="search-btn">查询 <span>●</span></div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">内部用户</label>
-                        <div class="layui-input-block">
-                          <select name="city" lay-verify="required" >
-                            <option value="">全部</option>
-
-                          </select>
-                        </div>
-
-                    </div>
-                    <div class="search-btn">查询 <span>●</span></div>
-                </div>
                     <div class="search-box w01 flex m-l-10">
                         <div class="search-form date-box flex">
                             <a><img src="../images/date.png"></a>
-                            <input type="text" class="date" id="test6" placeholder=" - ">
+                            <input type="text" class="date" id="test6" placeholder=" - " lay-key="1">
                         </div>
                         <div class="search-btn">查询 <span>●</span></div>
                     </div>
-                    <div class="dataWrap">
-                        <table id="table1" lay-filter="table1"></table>
-                    </div>
-            </div>
+                </div>
+                <div class="dataWrap distri-main">
+                    <table id="table1" lay-filter="table1"></table>
+                </div>
+                
         </div>
     </div>
     <script src="../js/jquery-1.8.3.min.js"></script>
