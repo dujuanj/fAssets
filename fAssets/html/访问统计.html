@@ -107,6 +107,13 @@
                     </div>
                     <div class="search-btn">查询 <span>●</span></div>
                 </div>
+                    <div class="search-box w01 flex m-l-10">
+                        <div class="search-form date-box flex">
+                            <a><img src="../images/date.png"></a>
+                            <input type="text" class="date" id="test6" placeholder=" - ">
+                        </div>
+                        <div class="search-btn">查询 <span>●</span></div>
+                    </div>
                     <div class="dataWrap">
                         <table id="table1" lay-filter="table1"></table>
                     </div>
@@ -115,10 +122,6 @@
     </div>
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script src="../js/layui/layui.js"></script>
-    <!-- <script src="../js/debt-account-list.js"></script> -->
-        <script type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-xs" lay-event="edit">授权</a>
-        </script>
     <script>
         layui.use('table', function(){
             var table = layui.table;
@@ -127,9 +130,11 @@
                 ,url:'../js/list.js'
                 ,cols: [[
                     {field:'id', width:'10%', title: '序号'}
-                    ,{field:'sex', width:'30%', title: '角色编码'}
-                    ,{field:'city', width:'30%', title: '角色名称'}
-                    ,{field:'sign', title: '操作',width:'30%',toolbar: '#barDemo'}
+                    ,{field:'sex', width:'20%', title: '功能模块'}
+                    ,{field:'city', width:'20%', title: '访问页面'}
+                    ,{field:'sign', title: '访问次数',width:'20%'}
+                    ,{field:'sign', title: '访问时间汇总（时）',width:'20%'}
+                    ,{field:'sign', title: '访问次数',width:'10%'}
                 ]]
                 ,page: true
             });
