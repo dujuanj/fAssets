@@ -1,0 +1,93 @@
+.grey{
+    color:#797979;
+    font-weight: normal!important;
+}
+.distri-header select{
+    height: 29px;
+    width:100px;
+}
+.distri-main{
+    margin:20px;
+   
+}
+.part1,.part2,.part3,.part4,.part5{
+    background: #fff;
+    padding:10px;
+}
+.layui-tab-content h2{
+    color:#fff;
+    margin-bottom: 15px;
+}
+.layui-tab-brief>.layui-tab-title .layui-this{
+    color: #333;
+    background: #B0FFFF;
+    width:225px;
+}
+.part3 .layui-tab-brief>.layui-tab-title .layui-this{
+    background: #fff;
+    border:none;
+    border-left:3px solid #FF9900;
+}
+.part3 .layui-tab-title li{
+    color:#333;
+    border-left:3px solid #797979;
+    box-sizing: border-box;
+}
+.part3 .layui-tab-title li:hover{
+    box-sizing: border-box;
+    border-left:4px solid #FF9900;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{
+    border-bottom: 1px solid #E6E6E6;
+}
+.layui-tab-title li{
+    color: #fff;
+    width:225px;
+}
+.layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even){
+    background: #E4E4E4;
+    color:#333
+}
+.prt1-title{
+    width:100%;
+    text-align: center;
+    font-size:16px;
+    background:#E4E4E4;
+    border:1px solid #797979;
+    padding:5px 0;
+    margin-top:10px;
+}
+.layui-table, .layui-table-view{
+    margin-top:0
+}
+.layui-table-cell{
+    text-align: center;
+}
+.mr10{
+    margin-right: 10px;
+}
+.dbtables{
+    display: flex;
+    width:100%;
+}
+.dbtables .tableft,.dbtables .tabright{
+    width: 50%;
+}
+.part1 h3{
+    text-align: center;
+    font-weight: bold;
+}
+.mart0{
+    margin-top:0;
+    border-top:none;
+    
+}
+.export-btn{
+    float: right;
+}
+.left{
+    float:left;
+}
+.layui-btn-sm{
+    padding: 0 30px;
+}

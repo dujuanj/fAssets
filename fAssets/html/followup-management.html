@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后续管理工作报告</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/followup-management.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- header部分 -->
+        <div id="header" class="flex header">
+            <div class="header_l"></div>
+            <div class="header_c flex1 distri-header">
+
+                <h2 class="title">债务融资工具</h2>
+                <h2 class="title grey">债权融资计划</h2>
+
+            </div>
+            <div class="header_r"></div>
+        </div>
+        <div class="content flex">
+            <!-- 左侧菜单部分 -->
+            <div class="leftMenu">
+                <div class="menu_t"></div>
+                <div class="menu_c">
+                    <ul>
+                        <li class="active">
+                            <a href="javascript: void(0);">首页</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">付息兑付行权</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重大事项检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">持有人会议检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">投保条款检测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">信用事件触发监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">评级调整监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">定期披露监测</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">重点关注池管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期债项台账</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">存续期发行人查询</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">后续管理工作报告</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">自律处分</a>
+                        </li>
+                    </ul>
+                    <div class="systemName">
+                        <p>后续管理信息服务系统</p>
+                        <i class="line"></i>
+                        <em class="block"></em>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧内容部分 -->
+            <div class="main flex1 p-r-15">
+                <div class="distri-main">
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">概况</li>
+                            <li>还本付息</li>
+                            <li>信息披露</li>
+                            <li>持有人会议</li>
+                            <li>风险排查</li>
+                        </ul>
+                        <div class="layui-tab-content">
+
+                            <div class="layui-tab-item layui-show">
+                                <h2>债务融资工具概况</h2>
+                                <div class="part1">
+                                    <h3>截止日期：2019年4 月 30日 &nbsp; &nbsp; &nbsp;单位：亿元</h3>
+                                    <div style='display: flex;'>
+                                        <div id='chart1' style="width: 400px;height:400px;"></div>
+                                        <div id='chart2' style="width:400px;height:400px;"></div>
+                                        <div id='chart3' style="width:400px;height:400px;"></div>
+                                    </div>
+                                    <div>
+                                        <div class="prt1-title">总体情况</div>
+                                        <table id="table1" lay-filter="test"></table>
+                                    </div>
+                                    <div>
+                                        <div class="prt1-title">明细</div>
+                                        <table id="table2" lay-filter="test"></table>
+                                    </div>
+                                    <p class="grey">注：不区分发行方式，各产品统计包括公募发行和私募发行</p>
+                                    <div>
+                                        <div class="prt1-title">仅存续PPN发行人</div>
+                                        <table id="table3" lay-filter="test"></table>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-tab-item ">
+
+                                <div class="clearfix">
+                                    <h2 class="left">还本付息情况</h2>
+                                    <a href="javascript:;"
+                                        class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger export-btn">导出</a>
+                                </div>
+                                <div class="part2">
+                                    <div class="prt1-title">还本付息情况</div>
+                                    <div class="dbtables">
+                                        <div class="tableft">
+                                            <table id="table61" lay-filter="test"></table>
+                                        </div>
+                                        <div class="tabright">
+                                            <div class="prt1-title mart0">兑付金额</div>
+                                            <table id="table62" lay-filter="test"></table>
+                                        </div>
+                                    </div>
+                                    <p class="grey">注：1.存续家数的统计应剔除重复的发行人。2.“仅存续PPN”是指发行人存续的全部债务融资工具是且仅是PPN的情况</p>
+                                </div>
+
+                            </div>
+                            <!-- 信息披露 -->
+                            <div class="layui-tab-item">
+
+                                <div class="clearfix">
+                                    <h2 class="left">信息披露工作情况</h2>
+                                    <a href="javascript:;"
+                                        class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger export-btn">导出</a>
+                                    <a href="javascript:;"
+                                        class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger export-btn">批量导入</a>
+
+                                </div>
+                                <div class="part3">
+                                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                                        <ul class="layui-tab-title">
+                                            <li class="layui-this">定期财务信息督导情况</li>
+                                            <li>非定期财务信息督导情况</li>
+                                            <li>已披露信息变更督导情况</li>
+
+                                        </ul>
+                                        <div class="layui-tab-content">
+                                            <div class="layui-tab-item layui-show">
+                                                <div class="part1">
+                                                    <div class="prt1-title">2018年 年度财务报表披露情况 （填写日期：2018年9月1日 - 2019年4月30日）</div>
+                                                    <table id="table-sub1" lay-filter="test"></table>
+                                                </div>
+                                            </div>
+                                            <div class="layui-tab-item">
+                                                <div class="part2">
+                                                    <div class="prt1-title">发行人非定期信息披露统计填写日期：2018年9月1日 - 2019年4月30日</div>
+                                                    <table id="table-sub2" lay-filter="test"></table>
+                                                    <p class="grey">
+                                                        注：                                       
+
+1、非定期信息披露督导包括重大事项信息披露督导、持有人会议信息披露督导及其他非定期信息披露督导等内容；<br>                                       
+
+2、事件类型包括但不限于：特别风险、违约、重大亏损/损失/赔偿、停产、经营方针/范围/外部条件变化、企业控制权/高管变更、股东/实控人/高管无法履职/被调查/处罚、减资、更名、信息披露事务管理制度、合并/分立/破产/解散、资产交易/划转、债务逾期、股权/经营权托管、丧失子公司控制权、重大合同、债务承继/免除/重组、债务置换、担保/抵质押、诉讼仲裁、查封冻结、市场传闻、增进安排变化、行权、投保条款、违规、持有人会议等；  <br>                                     
+
+3、“事项类型”与债项相关时，“相关债项”填写相关债项，事项类型与企业主体相关的，可不填写； <br>                                      
+
+4、“事项来源”填写发现来源，包括“企业告知”、“舆情监测”和“协会提示”； <br>                                      
+
+5、督导次数为报告期内主承销商对发行企业、信用增进机构非定期信息披露督导次数；<br>                                       
+
+6、如截至统计日所督导事项尚未披露、处于关注中，可于“处理情况”中注明尚处关注中，“披露时间”可不填，  <br>                                     
+
+其他情况于“备注”中进行说明。    <br>                                   
+
+7、“仅存续PPN”是指发行人存续的全部债务融资工具是且仅是PPN的情况。     <br>                                  
+
+8、“是否触发投保条款”请主承销商排查相应重大事项触发投保条款情况并说明处置措施。 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="layui-tab-item">
+                                                <div class="part3">
+                                                    <div class="prt1-title">2018年 年度财务报表披露情况 （填写日期：2018年9月1日 - 2019年4月30日）</div>
+                                                    <table id="table-sub3" lay-filter="test"></table>
+                                                    <div class="prt1-title">信用增进机构非定期信息披露统计</div>
+                                                    <table id="table-sub31" lay-filter="test"></table>
+                                                    <p>注：                                       
+
+                                                        1、已披露信息变更事项类型包括已披露信息差错、变更会计政策或会计估计、募集资金用途变更、中期票据发行计划变更及其他已披露信息变更的行为；   <br>                                    
+                                                        
+                                                        2、“事项类型”为“募集资金用途变更”时，“相关债项”填写变更用途的该期债项；    <br>                                   
+                                                        
+                                                        3、“事项来源”填写发现来源，包括“企业告知”、“舆情监测”和“协会提示”；   <br>                                    
+                                                        
+                                                        4、督导次数为报告期内主承销商对发行企业、信用增进机构已披露信息变更事项督导次数； <br>                                      
+                                                        
+                                                        5、如截至统计日所督导事项尚未披露、处于关注中，可于“处理情况”中注明尚处关注中，“披露时间”可不填，其他情况于“备注”中进行说明。<br>                                       
+                                                        
+                                                        6、“仅存续PPN”是指发行人存续的全部债务融资工具是且仅是PPN的情况。 <br>                                      
+                                                        
+                                                        7、“是否触发投保条款”请主承销商排查相应变更事项触发投保条款情况并说明处置措施。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+
+                                <div class="clearfix">
+                                    <h2 class="left">持有人会议情况</h2>
+                                    <a href="javascript:;"
+                                        class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger export-btn">导出</a>
+                                    <a href="javascript:;"
+                                        class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger export-btn">批量导入</a>
+
+                                </div>
+                                <div class="part4">
+                                    <div class="prt1-title">持有人会议情况 截止日期：2019年4月30日 </div>
+                                    <table id="table4" lay-filter="test"></table>
+                                    <p class="grey">注：“仅存续PPN”是指发行人存续的全部债务融资工具是且仅是PPN的情况。</p>
+                                </div>
+
+                            </div>
+                            <div class="layui-tab-item">
+                                <div class="clearfix">
+                                    <h2 class="left">风险排查</h2>
+                                    <a href="javascript:;"
+                                        class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger export-btn">导出</a>
+                                </div>
+
+                                <div class="part5">
+
+                                    <table id="table5" lay-filter="test"></table>
+                                    <p class="grey">注：风险排查企业信息请在重点关注池进行维护。</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/layui/layui.js"></script>
+    <script src='../js/echarts.min.js'></script>
+    <!-- <script src="../js/debt-account-list.js"></script> -->
+    <script>
+        layui.use('element', function () {
+            var element = layui.element;
+
+            //…
+        });
+        layui.use('table', function () {
+            var table = layui.table;
+
+            //总体情况
+            table.render({
+                elem: '#table1'
+                , height: 150
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'sex', title: '存续期数', width: 400 }
+                        , { field: 'city', title: '存续家数', width: 400 }
+                        , { field: 'sign', title: '存续规模', width: 400, edit: 'text' }
+
+
+                    ]]
+            });
+            // 明细
+            table.render({
+                elem: '#table2'
+                , height: 250
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'sex', title: '债券类型', width: 300 }
+                        , { field: 'city', title: '存续期数', width: 300 }
+                        , { field: 'sign', title: '存续家数', width: 300, edit: 'text' }
+                        , { field: 'experience', title: '存续规模', width: 300, edit: 'text' }
+
+                    ]]
+            });
+            // 仅存续PPN发行人
+            table.render({
+                elem: '#table3'
+                , height: 100
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'sex', title: '存续期数', width: 400 }
+                        , { field: 'city', title: '存续家数', width: 400 }
+                        , { field: 'sign', title: '存续规模', width: 400, edit: 'text' }
+
+
+                    ]]
+            });
+
+            // 入池企业行业分布情况
+            table.render({
+                elem: '#table5'
+                , height: 500
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'sex', title: '行业名称', width: 150 }
+                        , { field: 'city', title: '入池企业数', width: 100 }
+                        , { field: 'sign', title: '笔数', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '金额', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '金额占比', width: 100, edit: 'text' }
+
+                    ]]
+            });
+
+            // 还本付息情况
+            table.render({
+                elem: '#table61'
+                , height: 255
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'city', title: '类型', width: 200 }
+                        , { field: 'sign', title: '期数', width: 200, edit: 'text' }
+                        , { field: 'experience', title: '家数', width: 200, edit: 'text' }
+
+
+                    ]]
+            });
+            table.render({
+                elem: '#table62'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'city', title: '兑付本金', width: 200 }
+                        , { field: 'sign', title: '兑付利息', width: 200, edit: 'text' }
+                        , { field: 'experience', title: '家数', width: 200, edit: 'text' }
+
+
+                    ]]
+            });
+            // 持有人会议情况
+            table.render({
+                elem: '#table4'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'city', title: '会议召开日期', width: 120 }
+                        , { field: 'sign', title: '发行人名称', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '债券简称', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '其他召集人', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '触发事件类型', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '触发事件简要描述', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '持有人会议议题', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '决议情况', width: 120, edit: 'text' }
+                        , { field: 'experience', title: '是否仅存续PPN', width: 120, edit: 'text' }
+
+                    ]]
+            });
+            //    风险排查
+            table.render({
+                elem: '#table5'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [{ field: 'city', title: '发行人名称', width: 90 }
+                        , { field: 'sign', title: '企业性质', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '所在地区', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '主体信用级别', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '信用增进机构名称', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '入池原因', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '经营管理变动情况', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '财务状况变动情况', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '定期信息披露', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '重大事项信息披露', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '募集资金使用变更情况', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '其他情况', width: 90, edit: 'text' }
+
+                    ]]
+            });
+            // table-sub1
+            table.render({
+                elem: '#table-sub1'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    [
+                    { field: 'city', title: '发行人',clospan:6 ,width: 90,align:'center'}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    , { field: 'sign', title: '信用增进机构',  clospan:4,width: 130}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    // , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    // , { field: 'sign', title: '',  edit: 'text',width: 90}
+                    ],
+                    [
+                        , { field: 'experience', title: '所在地区', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '主体信用级别', width: 110, edit: 'text' }
+                        , { field: 'experience', title: '信用增进机构名称', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '入池原因', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '经营管理变动情况', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '财务状况变动情况', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '定期信息披露', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '重大事项信息披露', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '募集资金使用变更情况', width: 170, edit: 'text' }
+                        
+
+                    ]]
+            });
+            //  table-sub2
+            table.render({
+                elem: '#table-sub2'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    
+                    [  { field: 'city', title: '发行企业',width: 90,align:'center'}
+                    , { field: 'sign', title: '相关债项',  edit: 'text',width: 90}
+                        , { field: 'experience', title: '事件类型', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '事件内容', width: 110, edit: 'text' }
+                        , { field: 'experience', title: '事项来源', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '发现时间', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '处理情况', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '披露时间', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '后续进展', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '备注', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '是否仅存续PPN', width: 170, edit: 'text' }
+                        
+
+                    ]]
+            });
+             //  table-sub3
+             table.render({
+                elem: '#table-sub3'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    
+                    [  { field: 'city', title: '发行企业',width: 90,align:'center'}
+                    , { field: 'sign', title: '相关债项',  edit: 'text',width: 90}
+                        , { field: 'experience', title: '事件类型', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '事件内容', width: 110, edit: 'text' }
+                        , { field: 'experience', title: '事项来源', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '发现时间', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '处理情况', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '披露时间', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '后续进展', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '备注', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '是否仅存续PPN', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '是否触发投保条款', width: 90, edit: 'text' }
+                        
+
+                    ]]
+            });
+            //  table-sub31
+            table.render({
+                elem: '#table-sub31'
+                , height: 224
+                , url: '../js/list.js' //数据接口
+                , page: false //开启分页
+                , cols: [
+                    
+                    [  { field: 'city', title: '信用增进机构',width: 90,align:'center'}
+                    , { field: 'sign', title: '相关债项',  edit: 'text',width: 90}
+                        , { field: 'experience', title: '事件类型', width: 90, edit: 'text' }
+                        , { field: 'experience', title: '事件内容', width: 110, edit: 'text' }
+                        , { field: 'experience', title: '事项来源', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '发现时间', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '处理情况', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '披露时间', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '后续进展', width: 100, edit: 'text' }
+                        , { field: 'experience', title: '备注', width: 100, edit: 'text' }
+                      
+                        
+
+                    ]]
+            });
+        });
+        // 图表(1)
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+        var option = {
+            title: {
+                text: '某站点用户访问来源',
+                subtext: '纯属虚构',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            // legend: {
+            //     orient: 'vertical',
+            //     left: 'left',
+            //     data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            // },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        { value: 335, name: '直接访问' },
+                        { value: 310, name: '邮件营销' },
+                        { value: 234, name: '联盟广告' },
+                        { value: 135, name: '视频广告' },
+                        { value: 1548, name: '搜索引擎' }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        myChart1.setOption(option);
+        // 图表二
+        var myChart2 = echarts.init(document.getElementById('chart2'));
+        myChart2.setOption(option);
+        // 图表三
+        var myChart3 = echarts.init(document.getElementById('chart3'));
+        myChart3.setOption(option);
+    </script>
+</body>
+
+</html>
